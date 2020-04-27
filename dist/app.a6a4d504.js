@@ -12442,6 +12442,7 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   mounted: function mounted() {
     console.log(this.iconPosition);
@@ -12481,6 +12482,13 @@ exports.default = _default;
     [
       _vm.icon
         ? _c("funk-icon", { staticClass: "icon", attrs: { name: _vm.icon } })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.icon
+        ? _c("funk-icon", {
+            staticClass: "loading",
+            attrs: { name: "#i-loading" }
+          })
         : _vm._e(),
       _vm._v(" "),
       _c(

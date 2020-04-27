@@ -1,3 +1,11 @@
+@keyframes spin-data-v-e7b654 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
 .funk-button[data-v-e7b654] {
   display: inline-flex;
   justify-content: center;
@@ -34,6 +42,9 @@
 }
 .funk-button.icon-right > .content[data-v-e7b654] {
   order: 1;
+}
+.funk-button .loading[data-v-e7b654] {
+  animation: spin-data-v-e7b654 1s infinite linear;
 }
 .f-icon[data-v-36c5f9] {
   width: 1em;
