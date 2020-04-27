@@ -1,5 +1,5 @@
 Vue.component('funk-button',{
    template:`
-      <button>Hi</button>
+      <button class="funk-button">按钮</button>
    `
 })
