@@ -1,7 +1,7 @@
 <template>
-  <button class="funk-button" :class="`icon-${iconPosition}`">
-    <funk-icon class="icon" :name="icon" v-if="icon"></funk-icon>
-    <funk-icon class="loading" name="#i-loading" v-if="icon"></funk-icon>
+  <button class="funk-button" :class="`icon-${iconPosition}`" @click="$emit('click')">
+    <funk-icon class="icon" :name="icon" v-if="icon && !loading"></funk-icon>
+    <funk-icon  class="loading icon" name="#i-loading" v-if="loading"></funk-icon>
     <div class="content">
       <slot ref="a">按钮</slot>
     </div>
@@ -18,6 +18,10 @@ export default {
   props: {
     icon: {
       type: String
+    },
+    loading:{
+       type:Boolean,
+       default:false
     },
     iconPosition: {
       type: String,
@@ -61,7 +65,7 @@ export default {
     > .content {order: 1;}
   }
   .loading {
-   //   transform-origin:(.15em .15em);
+   //   transform-origin:(10px 8.5px);
      animation: spin 1s infinite linear;
   }
 }

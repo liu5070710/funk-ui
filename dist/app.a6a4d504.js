@@ -12454,6 +12454,10 @@ var _default = {
     icon: {
       type: String
     },
+    loading: {
+      type: Boolean,
+      default: false
+    },
     iconPosition: {
       type: String,
       default: "left",
@@ -12478,15 +12482,23 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "button",
-    { staticClass: "funk-button", class: "icon-" + _vm.iconPosition },
+    {
+      staticClass: "funk-button",
+      class: "icon-" + _vm.iconPosition,
+      on: {
+        click: function($event) {
+          return _vm.$emit("click")
+        }
+      }
+    },
     [
-      _vm.icon
+      _vm.icon && !_vm.loading
         ? _c("funk-icon", { staticClass: "icon", attrs: { name: _vm.icon } })
         : _vm._e(),
       _vm._v(" "),
-      _vm.icon
+      _vm.loading
         ? _c("funk-icon", {
-            staticClass: "loading",
+            staticClass: "loading icon",
             attrs: { name: "#i-loading" }
           })
         : _vm._e(),
@@ -12616,7 +12628,12 @@ _vue.default.component('funk-button', _button.default);
 _vue.default.component('funk-icon', _icon.default);
 
 new _vue.default({
-  el: '#app'
+  el: '#app',
+  data: {
+    loading1: false,
+    loading2: false,
+    loading3: true
+  }
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./icon.vue":"src/icon.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

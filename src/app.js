@@ -6,5 +6,10 @@ Vue.component('funk-button',Button)
 Vue.component('funk-icon',Icon)
 
 new Vue({
-   el:'#app'
+   el:'#app',
+   data:{
+      loading1:false,
+      loading2:false,
+      loading3:true
+   }
 })
