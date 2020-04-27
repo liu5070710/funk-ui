@@ -1,8 +1,6 @@
 <template>
   <button class="funk-button" :class="`icon-${iconPosition}`">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="icon" />>
-    </svg>
+    <funk-icon class="icon" :name="icon" v-if="icon"></funk-icon>
     <div class="content">
       <slot ref="a">按钮</slot>
     </div>
@@ -12,10 +10,6 @@
 export default {
   mounted() {
     console.log(this.iconPosition);
-  },
-  created() {
-    if (this.iconPosition === "right") {
-    }
   },
   data() {
     return {};
@@ -59,9 +53,6 @@ export default {
   }
   > .icon {
     order: 1;
-    width: 1em;
-    height: 1em;
-    margin-right: 0.3em;
   }
   > .content {
     order: 2;

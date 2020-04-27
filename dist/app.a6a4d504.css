@@ -23,9 +23,6 @@
 }
 .funk-button > .icon[data-v-e7b654] {
   order: 1;
-  width: 1em;
-  height: 1em;
-  margin-right: 0.3em;
 }
 .funk-button > .content[data-v-e7b654] {
   order: 2;
@@ -37,4 +34,9 @@
 }
 .funk-button.icon-right > .content[data-v-e7b654] {
   order: 1;
+}
+.f-icon[data-v-36c5f9] {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
 }
