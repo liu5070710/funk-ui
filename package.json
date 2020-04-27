@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/liu5070710/funk-ui/issues"
   },
-  "homepage": "https://github.com/liu5070710/funk-ui#readme"
+  "homepage": "https://github.com/liu5070710/funk-ui#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
