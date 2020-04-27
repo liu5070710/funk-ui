@@ -1,19 +1,40 @@
-.funk-button {
+.funk-button[data-v-e7b654] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
   height: var(--button-height);
   font-size: var(--font-size);
   border-radius: var(--border-radius);
   color: var(--color);
-  padding: 0 1em;
+  padding: 0 0.73em;
   font: inherit;
   border: 1px solid var(--border-color);
   background: var(--button-bg);
 }
-.funk-button:hover {
+.funk-button[data-v-e7b654]:hover {
   border-color: var(--border-color-hover);
 }
-.funk-button:active {
+.funk-button[data-v-e7b654]:active {
   border-color: var(--button-active-bg);
 }
-.funk-button:focus {
+.funk-button[data-v-e7b654]:focus {
   outline: none;
+}
+.funk-button > .icon[data-v-e7b654] {
+  order: 1;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+}
+.funk-button > .content[data-v-e7b654] {
+  order: 2;
+}
+.funk-button.icon-right > .icon[data-v-e7b654] {
+  order: 2;
+  margin-left: 0.3em;
+  margin-right: 0;
+}
+.funk-button.icon-right > .content[data-v-e7b654] {
+  order: 1;
 }

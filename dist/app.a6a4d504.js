@@ -12437,7 +12437,33 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  mounted: function mounted() {
+    console.log(this.iconPosition);
+  },
+  created: function created() {
+    if (this.iconPosition === "right") {}
+  },
+  data: function data() {
+    return {};
+  },
+  props: {
+    icon: {
+      type: String
+    },
+    iconPosition: {
+      type: String,
+      default: "left"
+    }
+  }
+};
 exports.default = _default;
         var $e7b654 = exports.default || module.exports;
       
@@ -12451,7 +12477,25 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { staticClass: "funk-button" }, [_vm._v("按钮")])
+  return _c(
+    "button",
+    { staticClass: "funk-button", class: "icon-" + _vm.iconPosition },
+    [
+      _vm.icon
+        ? _c("svg", { staticClass: "icon" }, [
+            _c("use", { attrs: { "xlink:href": _vm.icon } }),
+            _vm._v(">\n  ")
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "content" },
+        [_vm._t("default", [_vm._v("按钮")])],
+        2
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -12460,7 +12504,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-e7b654",
             functional: undefined
           };
         })());
@@ -12528,7 +12572,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2578" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4830" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
