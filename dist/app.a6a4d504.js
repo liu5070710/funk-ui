@@ -12460,7 +12460,10 @@ var _default = {
     },
     iconPosition: {
       type: String,
-      default: "left"
+      default: "left",
+      validator: function validator(value) {
+        return !(value !== "left" && value != "right");
+      }
     }
   }
 };

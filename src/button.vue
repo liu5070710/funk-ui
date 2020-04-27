@@ -26,7 +26,10 @@ export default {
     },
     iconPosition: {
       type: String,
-      default: "left"
+      default: "left",
+      validator(value) {
+        return !(value !== "left" && value != "right");
+      }
     }
   }
 };
@@ -54,11 +57,24 @@ export default {
   &:focus {
     outline: none;
   }
-  > .icon {order: 1;width: 1em;height: 1em;margin-right: .3em;}
-  > .content {order: 2;}
+  > .icon {
+    order: 1;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.3em;
+  }
+  > .content {
+    order: 2;
+  }
   &.icon-right {
-    > .icon {order: 2;margin-left: .3em;margin-right: 0;}
-    > .content {order: 1;}
+    > .icon {
+      order: 2;
+      margin-left: 0.3em;
+      margin-right: 0;
+    }
+    > .content {
+      order: 1;
+    }
   }
 }
 </style>
