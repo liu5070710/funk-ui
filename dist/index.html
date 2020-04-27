@@ -29,10 +29,16 @@
       <funk-button icon="#i-settings" icon-position="right" :loading="loading2" @click="loading2=!loading2"> 
          设置
       </funk-button>
-      
+
       <funk-button :loading="loading3" @click="loading3=!loading3">
          点我
       </funk-button>
+
+      <funk-button-group>
+         <funk-button icon="#i-left">上一页</funk-button>
+         <funk-button>more</funk-button>
+         <funk-button icon="#i-right" icon-position="right">下一页</funk-button>
+      </funk-button-group>
       
    </div>
    

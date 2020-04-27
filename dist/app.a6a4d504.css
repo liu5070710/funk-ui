@@ -51,3 +51,22 @@
   height: 1em;
   margin-right: 0.3em;
 }
+.funk-button-group[data-v-6ec149] {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.funk-button-group > .funk-button[data-v-6ec149] {
+  border-radius: 0;
+}
+.funk-button-group > .funk-button[data-v-6ec149]:first-child {
+  border-bottom-left-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+}
+.funk-button-group > .funk-button[data-v-6ec149]:last-child {
+  border-bottom-right-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+.funk-button-group > .funk-button[data-v-6ec149]:not(:first-child) {
+  position: relative;
+  margin-left: -1px;
+}
