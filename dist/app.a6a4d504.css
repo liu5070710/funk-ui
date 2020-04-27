@@ -67,6 +67,8 @@
   border-top-right-radius: var(--border-radius);
 }
 .funk-button-group > .funk-button[data-v-6ec149]:not(:first-child) {
-  position: relative;
   margin-left: -1px;
+}
+.funk-button-group > .funk-button[data-v-6ec149]:hover {
+  z-index: 1;
 }

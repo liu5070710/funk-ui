@@ -8,7 +8,9 @@ export default {
   mounted() {
     for (let node of this.$el.children) {
       if (node.nodeName !== "BUTTON") {
-         console.warn('funk-button-group can only contain funk-button components')
+        console.warn(
+          "funk-button-group can only contain funk-button components"
+        );
       }
     }
   }
@@ -20,18 +22,20 @@ export default {
   vertical-align: middle;
   > .funk-button {
     border-radius: 0;
-  }
-  > .funk-button:first-child {
-    border-bottom-left-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
-  }
-  > .funk-button:last-child {
-    border-bottom-right-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-  }
-  > .funk-button:not(:first-child) {
-    position: relative;
-    margin-left: -1px;
+    &:first-child {
+      border-bottom-left-radius: var(--border-radius);
+      border-top-left-radius: var(--border-radius);
+    }
+    &:last-child {
+      border-bottom-right-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+    &:hover {
+       z-index:1
+    }
   }
 }
 </style>

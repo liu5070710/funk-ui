@@ -12641,7 +12641,7 @@ var _default = {
         var node = _step.value;
 
         if (node.nodeName !== "BUTTON") {
-          console.warn('funk-button-group can only contain funk-button components');
+          console.warn("funk-button-group can only contain funk-button components");
         }
       }
     } catch (err) {
