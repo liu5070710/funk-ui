@@ -6,7 +6,10 @@
       :value="value"
       :disabled="disabled"
       :readOnly="readOnly"
-      @change="$emit('change',$event)"
+      @change="$emit('change',$event.target.value)"
+      @input="$emit('input',$event.target.value)"
+      @focus="$emit('focus',$event.target.value)"
+      @blur="$emit('blur',$event.target.value)"
     />
     <template v-if="error">
       <Icon name="#i-error" class="icon-error"></Icon>
