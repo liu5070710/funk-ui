@@ -5,13 +5,13 @@
       :class="{'error':error}"
       :value="value"
       :disabled="disabled"
-      :readonly="readonly"
+      :readOnly="readOnly"
+      @change="$emit('change',$event)"
     />
     <template v-if="error">
-       <Icon name="#i-error" class="icon-error"></Icon>
-       <span class="errorMessage">{{error}}</span>
+      <Icon name="#i-error" class="icon-error"></Icon>
+      <span class="errorMessage">{{error}}</span>
     </template>
-    
   </div>
 </template>
 <script>
@@ -29,7 +29,7 @@ export default {
       type: Boolean,
       default: false
     },
-    readonly: {
+    readOnly: {
       type: Boolean,
       default: false
     },
@@ -62,15 +62,34 @@ $red: #f1453d;
   align-items: center;
   font-size: $font-size;
   > :not(:last-child) {
-     margin-right: .5em;
+    margin-right: 0.5em;
   }
-  > input {height: $height;border: 1px solid $border-color;border-radius: $border-radius;padding: 0 8px;font-size: inherit;
-    &:hover {border: 1px solid $border-color-hover;}
-    &:focus {box-shadow: inset 0 1px 3px $border-color;outline: none;}
+  > input {
+    height: $height;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: 0 8px;
+    font-size: inherit;
+    &:hover {
+      border: 1px solid $border-color-hover;
+    }
+    &:focus {
+      box-shadow: inset 0 1px 3px $border-color;
+      outline: none;
+    }
     &[disabled],
-    &[readonly] {color: rgb(173, 173, 173);border: 1px solid rgb(173, 173, 173);cursor: not-allowed;}
+    &[readonly] {
+      color: rgb(173, 173, 173);
+      border: 1px solid rgb(173, 173, 173);
+      cursor: not-allowed;
+    }
   }
-  > .icon-error {border-color: $red;fill:$red}
-  > .errorMessage{color: $red;}
+  > .icon-error {
+    border-color: $red;
+    fill: $red;
+  }
+  > .errorMessage {
+    color: $red;
+  }
 }
 </style>

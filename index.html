@@ -40,11 +40,11 @@
       <div class="box">
          <funk-input value='张三'></funk-input>
          <funk-input value='李四' disabled></funk-input>
-         <funk-input value='王五' readonly></funk-input>
+         <funk-input value='王五' readOnly></funk-input>
       </div>
 
       <div class="box">
-         <funk-input value='五' error="密码不得少于7个字符"></funk-input>
+         <funk-input value='五' @change='inputChange' error="密码不得少于7个字符"></funk-input>
       </div>
 
 
