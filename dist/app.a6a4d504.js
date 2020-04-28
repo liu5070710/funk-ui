@@ -12846,7 +12846,130 @@ render._withStripped = true
       
       }
     })();
-},{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/row.vue":[function(require,module,exports) {
+
+        var $743dc9 = exports.default || module.exports;
+      
+      if (typeof $743dc9 === 'function') {
+        $743dc9 = $743dc9.options;
+      }
+    
+        /* template */
+        Object.assign($743dc9, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-743dc9",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$743dc9', $743dc9);
+          } else {
+            api.reload('$743dc9', $743dc9);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/col.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+//
+//
+//
+//
+//
+var _default = {
+  name: "Funk-Col",
+  props: {
+    span: {
+      type: [Number, String]
+    }
+  },
+  created: function created() {
+    console.log(_typeof(this.span));
+  }
+};
+exports.default = _default;
+        var $90c65a = exports.default || module.exports;
+      
+      if (typeof $90c65a === 'function') {
+        $90c65a = $90c65a.options;
+      }
+    
+        /* template */
+        Object.assign($90c65a, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-90c65a",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$90c65a', $90c65a);
+          } else {
+            api.reload('$90c65a', $90c65a);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -12857,6 +12980,10 @@ var _buttonGroup = _interopRequireDefault(require("./buttonGroup.vue"));
 
 var _input = _interopRequireDefault(require("./input.vue"));
 
+var _row = _interopRequireDefault(require("./row.vue"));
+
+var _col = _interopRequireDefault(require("./col.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import Icon from './icon.vue'
@@ -12866,6 +12993,10 @@ _vue.default.component('funk-button', _button.default); // Vue.component('funk-i
 _vue.default.component('funk-button-group', _buttonGroup.default);
 
 _vue.default.component('funk-input', _input.default);
+
+_vue.default.component('funk-row', _row.default);
+
+_vue.default.component('funk-col', _col.default);
 
 new _vue.default({
   el: '#app',
@@ -12882,7 +13013,7 @@ new _vue.default({
     }
   }
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./buttonGroup.vue":"src/buttonGroup.vue","./input.vue":"src/input.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./buttonGroup.vue":"src/buttonGroup.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

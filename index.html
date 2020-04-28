@@ -25,7 +25,7 @@
    </style>
    <style>
       #app {
-         margin: 200px 0 0 200px;
+         margin: 50px 50px 0 50px;
       }
 
       .box {
@@ -37,6 +37,21 @@
 
 <body>
    <div id="app">
+      <funk-row>
+         <funk-col>1</funk-col>
+         <funk-col>2</funk-col>
+      </funk-row>
+      <funk-row>
+         <funk-col>1</funk-col>
+         <funk-col>2</funk-col>
+         <funk-col>3</funk-col>
+      </funk-row>
+      <funk-row>
+         <funk-col span="2">2</funk-col>
+         <funk-col span="22">22</funk-col>
+      </funk-row>
+
+      <hr />
       <div class="box">
          <funk-input value='张三' v-model="msg"></funk-input>
          {{msg}}
@@ -45,7 +60,7 @@
       </div>
 
       <div class="box">
-         <funk-input  @change='inputChange' error="密码不得少于7个字符"></funk-input>
+         <funk-input @change='inputChange' error="密码不得少于7个字符"></funk-input>
       </div>
 
 

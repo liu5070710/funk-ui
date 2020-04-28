@@ -107,3 +107,84 @@
 .wrapper > .errorMessage[data-v-2dff46] {
   color: #f1453d;
 }
+.row[data-v-743dc9] {
+  display: flex;
+}
+.col[data-v-90c65a] {
+  height: 100px;
+  background: gray;
+  width: 50%;
+  border: 1px solid red;
+}
+.col.class-prefix1[data-v-90c65a] {
+  width: 4.1666666667%;
+}
+.col.class-prefix2[data-v-90c65a] {
+  width: 8.3333333333%;
+}
+.col.class-prefix3[data-v-90c65a] {
+  width: 12.5%;
+}
+.col.class-prefix4[data-v-90c65a] {
+  width: 16.6666666667%;
+}
+.col.class-prefix5[data-v-90c65a] {
+  width: 20.8333333333%;
+}
+.col.class-prefix6[data-v-90c65a] {
+  width: 25%;
+}
+.col.class-prefix7[data-v-90c65a] {
+  width: 29.1666666667%;
+}
+.col.class-prefix8[data-v-90c65a] {
+  width: 33.3333333333%;
+}
+.col.class-prefix9[data-v-90c65a] {
+  width: 37.5%;
+}
+.col.class-prefix10[data-v-90c65a] {
+  width: 41.6666666667%;
+}
+.col.class-prefix11[data-v-90c65a] {
+  width: 45.8333333333%;
+}
+.col.class-prefix12[data-v-90c65a] {
+  width: 50%;
+}
+.col.class-prefix13[data-v-90c65a] {
+  width: 54.1666666667%;
+}
+.col.class-prefix14[data-v-90c65a] {
+  width: 58.3333333333%;
+}
+.col.class-prefix15[data-v-90c65a] {
+  width: 62.5%;
+}
+.col.class-prefix16[data-v-90c65a] {
+  width: 66.6666666667%;
+}
+.col.class-prefix17[data-v-90c65a] {
+  width: 70.8333333333%;
+}
+.col.class-prefix18[data-v-90c65a] {
+  width: 75%;
+}
+.col.class-prefix19[data-v-90c65a] {
+  width: 79.1666666667%;
+}
+.col.class-prefix20[data-v-90c65a] {
+  width: 83.3333333333%;
+}
+.col.class-prefix21[data-v-90c65a] {
+  width: 87.5%;
+}
+.col.class-prefix22[data-v-90c65a] {
+  width: 91.6666666667%;
+}
+.col.class-prefix23[data-v-90c65a] {
+  width: 95.8333333333%;
+}
+.col.class-prefix24[data-v-90c65a] {
+  width: 100%;
+}
