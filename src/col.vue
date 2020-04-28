@@ -1,5 +1,5 @@
 <template>
-  <div class="col">
+  <div class="col" :class="`col-${span}`">
     <slot></slot>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
    }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .col {
   height: 100px;
   background: gray;
@@ -24,7 +24,7 @@ export default {
   border: 1px solid red;
   $class-prefix: col-; 
   @for $n from 1 through 24 {
-    &.#{class-prefix}#{$n} {
+    &.#{$class-prefix}#{$n} {
       width: ($n / 24) * 100%;
     }
   }
