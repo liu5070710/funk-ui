@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>funk-ui-button</title>
-   <style>* {margin: 0;padding: 0;box-sizing: border-box;}
+   <style>* {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
       :root {
          --button-height: 32px;
          --font-size: 14px;
@@ -17,36 +23,55 @@
       }</style>
    <style>#app {
          margin: 200px 0 0 200px;
+      }
+
+      .box {
+         margin: 50px;
       }</style>
-   
+
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
+
 <body>
    <div id="app">
-      <funk-button icon="#i-settings" icon-position="left" @click="loading1=!loading1" :loading="loading1">
-         点击
-      </funk-button>
-      
-      <funk-button icon="#i-settings" icon-position="right" :loading="loading2" @click="loading2=!loading2"> 
-         设置
-      </funk-button>
+      <div class="box">
+         <funk-input value="张三"></funk-input>
+         <funk-input value="李四" disabled=""></funk-input>
+         <funk-input value="王五" readonly=""></funk-input>
+      </div>
 
-      <funk-button :loading="loading3" @click="loading3=!loading3">
-         点我
-      </funk-button>
+      <div class="box">
+         <funk-input value="五" error="密码不得少于7个字符"></funk-input>
+      </div>
 
-      <funk-button-group>
-         <funk-button icon="#i-left">上一页</funk-button>
-         <funk-button>more</funk-button>
-         <funk-button icon="#i-right" icon-position="right">下一页</funk-button>
-      </funk-button-group>
-      
+
+      <div class="box">
+         <funk-button icon="#i-settings" icon-position="left" @click="loading1=!loading1" :loading="loading1">
+            点击
+         </funk-button>
+
+         <funk-button icon="#i-settings" icon-position="right" :loading="loading2" @click="loading2=!loading2">
+            设置
+         </funk-button>
+
+         <funk-button :loading="loading3" @click="loading3=!loading3">
+            点我
+         </funk-button>
+
+         <funk-button-group>
+            <funk-button icon="#i-left">上一页</funk-button>
+            <funk-button icon="#i-right" icon-position="right">下一页</funk-button>
+         </funk-button-group>
+      </div>
+
+
    </div>
-   
 
 
 
-  
+
+
    <script src="/app.a6a4d504.js"></script>
-   <script src="//at.alicdn.com/t/font_1786271_zg2uprny669.js"></script>
+   <script src="//at.alicdn.com/t/font_1786271_v6apok1sk.js"></script>
 </body>
+
 </html>

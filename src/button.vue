@@ -8,7 +8,11 @@
   </button>
 </template>
 <script>
+import Icon from './icon.vue';
 export default {
+  components:{
+    'funk-icon': Icon
+  },
   mounted() {
     console.log(this.iconPosition);
   },
