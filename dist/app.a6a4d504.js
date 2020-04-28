@@ -12915,6 +12915,9 @@ var _default = {
   props: {
     span: {
       type: [Number, String]
+    },
+    offset: {
+      type: [Number, String]
     }
   },
   created: function created() {
@@ -12936,7 +12939,10 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "col", class: "col-" + _vm.span },
+    {
+      staticClass: "col",
+      class: ["col-" + _vm.span, _vm.offset && "offset-" + _vm.offset]
+    },
     [_vm._t("default")],
     2
   )
