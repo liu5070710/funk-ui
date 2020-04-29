@@ -1025,3 +1025,16 @@
 .fade-enter[data-v-7e83b1], .fade-leave-to[data-v-7e83b1] {
   margin-left: -150px;
 }
+.toast[data-v-4e37f3] {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  transform: translateX(-50%);
+  left: 50%;
+  padding: 0 15px;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+}
