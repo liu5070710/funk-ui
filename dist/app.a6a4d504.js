@@ -13435,7 +13435,33 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'FunkToast'
+  name: 'FunkToast',
+  props: {
+    autoClose: {
+      type: Boolean,
+      default: true
+    },
+    delay: {
+      type: [Number, String],
+      default: 2
+    }
+  },
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    setTimeout(function () {
+      _this.close();
+    }, this.delay * 1000);
+  },
+  methods: {
+    close: function close() {
+      this.$el.remove();
+      this.$destroy();
+    }
+  }
 };
 exports.default = _default;
         var $4e37f3 = exports.default || module.exports;
