@@ -1,17 +1,17 @@
 <template>
   <button class="funk-button" :class="`icon-${iconPosition}`" @click="$emit('click')">
     <funk-icon class="icon" :name="icon" v-if="icon && !loading"></funk-icon>
-    <funk-icon  class="loading icon" name="#i-loading" v-if="loading"></funk-icon>
+    <funk-icon class="loading icon" name="#i-loading" v-if="loading"></funk-icon>
     <div class="content">
       <slot ref="a">按钮</slot>
     </div>
   </button>
 </template>
 <script>
-import Icon from './icon.vue';
+import Icon from "./icon.vue";
 export default {
-  components:{
-    'funk-icon': Icon
+  components: {
+    "funk-icon": Icon
   },
   mounted() {
     // console.log(this.iconPosition);
@@ -23,9 +23,9 @@ export default {
     icon: {
       type: String
     },
-    loading:{
-       type:Boolean,
-       default:false
+    loading: {
+      type: Boolean,
+      default: false
     },
     iconPosition: {
       type: String,
@@ -39,12 +39,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 @keyframes spin {
-   0% {
-      transform: rotate(0deg);
-   }
-   100% {
-      transform: rotate(360deg);
-   }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .funk-button {
   display: inline-flex;
@@ -59,18 +59,34 @@ export default {
   font: inherit;
   border: 1px solid var(--border-color);
   background: var(--button-bg);
-  &:hover {border-color: var(--border-color-hover);}
-  &:active {border-color: var(--button-active-bg);}
-  &:focus {outline: none;}
-  > .icon {order: 1;}
-  > .content {order: 2;}
+  &:hover {
+    border-color: var(--border-color-hover);
+  }
+  &:active {
+    border-color: var(--button-active-bg);
+  }
+  &:focus {
+    outline: none;
+  }
+  > .icon {
+    order: 1;
+  }
+  > .content {
+    order: 2;
+  }
   &.icon-right {
-    > .icon {order: 2;margin-left: 0.3em;margin-right: 0;}
-    > .content {order: 1;}
+    > .icon {
+      order: 2;
+      margin-left: 0.3em;
+      margin-right: 0;
+    }
+    > .content {
+      order: 1;
+    }
   }
   .loading {
-   //   transform-origin:(10px 8.5px);
-     animation: spin 1s infinite linear;
+    //   transform-origin:(10px 8.5px);
+    animation: spin 1s infinite linear;
   }
 }
 </style>

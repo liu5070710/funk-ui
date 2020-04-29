@@ -48,8 +48,7 @@ export default {
       };
     }
   },
-  created() {
-    console.log(typeof this.span);
+  mounted() {
   }
 };
 </script>

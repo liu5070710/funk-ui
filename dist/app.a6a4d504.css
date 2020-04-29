@@ -111,6 +111,15 @@
   display: flex;
   flex-wrap: wrap;
 }
+.row.align-left {
+  justify-content: flex-start;
+}
+.row.align-right {
+  justify-content: flex-end;
+}
+.row.align-center {
+  justify-content: center;
+}
 .col {
   height: 100px;
   background: #2c3e50;
@@ -990,4 +999,15 @@
   .col.offset-wide-pc-24 {
     margin-left: 100%;
   }
+}
+.layout[data-v-12845b] {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.layout.hasSlider[data-v-12845b] {
+  flex-direction: row;
+}
+.container[data-v-37322e] {
+  flex-grow: 1;
 }

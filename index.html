@@ -10,6 +10,7 @@
          margin: 0;
          padding: 0;
          box-sizing: border-box;
+         color: rgb(91, 136, 149);
       }
 
       :root {
@@ -25,11 +26,17 @@
    </style>
    <style>
       #app {
-         margin: 50px 50px 0 50px;
+         margin: 0 20px 0 20px;
       }
 
       .box {
          margin: 50px;
+      }
+
+      
+      .demo {
+         min-height: 100px;
+         border: 1px solid #666;
       }
    </style>
 
@@ -37,25 +44,52 @@
 
 <body>
    <div id="app">
-      <funk-row>
-         <funk-col :phone="{span:2}" :ipad="{span:6}" :narrow-pc="{span:12}" :pc="{span:16}" :wide-pc="{span:22}">1
+      <funk-layout style="height: 100vh;">
+         <funk-header class="funk-header">header</funk-header>
+         <funk-container class="funk-container">container</funk-container>
+         <funk-footer class="funk-footer">footer</funk-footer>
+      </funk-layout>
+
+      <funk-layout >
+         <funk-header class="demo">header</funk-header>
+         <funk-layout >
+            <funk-slider class="demo">slider</funk-slider>
+            <funk-container class="demo">container</funk-container>
+         </funk-layout>
+         <funk-footer class="demo">footer</funk-footer>
+      </funk-layout>
+
+      <funk-layout >
+         <funk-slider class="demo">slider</funk-slider>
+         <funk-layout >
+            <funk-header class="demo">header</funk-header>
+            <funk-container class="demo">container</funk-container>
+            <funk-footer class="demo">footer</funk-footer>
+         </funk-layout>
+         
+      </funk-layout>
+
+
+
+      <!-- <funk-row >
+         <funk-col span="2" :phone="{span:2}" :ipad="{span:6}" :narrow-pc="{span:12}" :pc="{span:16}" :wide-pc="{span:22}">1
          </funk-col>
-         <funk-col :phone="{span:22}" :ipad="{span:16}" :narrow-pc="{span:12}" :pc="{span:8}" :wide-pc="{span:2}">2
+         <funk-col span="22" :phone="{span:22}" :ipad="{span:18}" :narrow-pc="{span:12}" :pc="{span:8}" :wide-pc="{span:2}">2
          </funk-col>
       </funk-row>
       <funk-row>
-         <funk-col>1</funk-col>
-         <funk-col>2</funk-col>
          <funk-col>3</funk-col>
+         <funk-col>4</funk-col>
+         <funk-col>5</funk-col>
       </funk-row>
       <funk-row>
          <funk-col span="1">10</funk-col>
          <funk-col span="10" offset='2'>14</funk-col>
          <funk-col span="8" offset='3'>14</funk-col>
-      </funk-row>
+      </funk-row> -->
 
-      <hr />
-      <div class="box">
+
+      <!-- <div class="box">
          <funk-input value='张三' v-model="msg"></funk-input>
          {{msg}}
          <funk-input value='李四' disabled></funk-input>
@@ -64,10 +98,10 @@
 
       <div class="box">
          <funk-input @change='inputChange' error="密码不得少于7个字符"></funk-input>
-      </div>
+      </div> -->
 
 
-      <div class="box">
+      <!-- <div class="box">
          <funk-button icon="#i-settings" icon-position="left" @click="loading1=!loading1" :loading="loading1">
             点击
          </funk-button>
@@ -84,7 +118,7 @@
             <funk-button icon="#i-left">上一页</funk-button>
             <funk-button icon="#i-right" icon-position="right">下一页</funk-button>
          </funk-button-group>
-      </div>
+      </div> -->
 
 
    </div>
