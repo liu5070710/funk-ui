@@ -12997,8 +12997,9 @@ var _default = {
           ipad = this.ipad,
           narrowPc = this.narrowPc,
           pc = this.pc,
-          widePc = this.widePc;
-      var phoneClass = [];
+          widePc = this.widePc; // let phoneClass = [];
+
+      console.log(narrowPc);
       return [span && "col-".concat(span), offset && "offset-".concat(offset), phone && "col-phone-".concat(phone.span), ipad && "col-ipad-".concat(ipad.span), narrowPc && "col-narrow-pc-".concat(narrowPc.span), pc && "col-pc-".concat(pc.span), widePc && "col-wide-pc-".concat(widePc.span)];
     },
     colStyle: function colStyle() {

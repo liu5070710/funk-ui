@@ -554,148 +554,148 @@
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
-  .col.col-narrow-1 {
+  .col.col-narrow-pc-1 {
     width: 4.1666666667%;
   }
-  .col.col-narrow-2 {
+  .col.col-narrow-pc-2 {
     width: 8.3333333333%;
   }
-  .col.col-narrow-3 {
+  .col.col-narrow-pc-3 {
     width: 12.5%;
   }
-  .col.col-narrow-4 {
+  .col.col-narrow-pc-4 {
     width: 16.6666666667%;
   }
-  .col.col-narrow-5 {
+  .col.col-narrow-pc-5 {
     width: 20.8333333333%;
   }
-  .col.col-narrow-6 {
+  .col.col-narrow-pc-6 {
     width: 25%;
   }
-  .col.col-narrow-7 {
+  .col.col-narrow-pc-7 {
     width: 29.1666666667%;
   }
-  .col.col-narrow-8 {
+  .col.col-narrow-pc-8 {
     width: 33.3333333333%;
   }
-  .col.col-narrow-9 {
+  .col.col-narrow-pc-9 {
     width: 37.5%;
   }
-  .col.col-narrow-10 {
+  .col.col-narrow-pc-10 {
     width: 41.6666666667%;
   }
-  .col.col-narrow-11 {
+  .col.col-narrow-pc-11 {
     width: 45.8333333333%;
   }
-  .col.col-narrow-12 {
+  .col.col-narrow-pc-12 {
     width: 50%;
   }
-  .col.col-narrow-13 {
+  .col.col-narrow-pc-13 {
     width: 54.1666666667%;
   }
-  .col.col-narrow-14 {
+  .col.col-narrow-pc-14 {
     width: 58.3333333333%;
   }
-  .col.col-narrow-15 {
+  .col.col-narrow-pc-15 {
     width: 62.5%;
   }
-  .col.col-narrow-16 {
+  .col.col-narrow-pc-16 {
     width: 66.6666666667%;
   }
-  .col.col-narrow-17 {
+  .col.col-narrow-pc-17 {
     width: 70.8333333333%;
   }
-  .col.col-narrow-18 {
+  .col.col-narrow-pc-18 {
     width: 75%;
   }
-  .col.col-narrow-19 {
+  .col.col-narrow-pc-19 {
     width: 79.1666666667%;
   }
-  .col.col-narrow-20 {
+  .col.col-narrow-pc-20 {
     width: 83.3333333333%;
   }
-  .col.col-narrow-21 {
+  .col.col-narrow-pc-21 {
     width: 87.5%;
   }
-  .col.col-narrow-22 {
+  .col.col-narrow-pc-22 {
     width: 91.6666666667%;
   }
-  .col.col-narrow-23 {
+  .col.col-narrow-pc-23 {
     width: 95.8333333333%;
   }
-  .col.col-narrow-24 {
+  .col.col-narrow-pc-24 {
     width: 100%;
   }
-  .col.offset-narrow-1 {
+  .col.offset-narrow-pc-1 {
     margin-left: 4.1666666667%;
   }
-  .col.offset-narrow-2 {
+  .col.offset-narrow-pc-2 {
     margin-left: 8.3333333333%;
   }
-  .col.offset-narrow-3 {
+  .col.offset-narrow-pc-3 {
     margin-left: 12.5%;
   }
-  .col.offset-narrow-4 {
+  .col.offset-narrow-pc-4 {
     margin-left: 16.6666666667%;
   }
-  .col.offset-narrow-5 {
+  .col.offset-narrow-pc-5 {
     margin-left: 20.8333333333%;
   }
-  .col.offset-narrow-6 {
+  .col.offset-narrow-pc-6 {
     margin-left: 25%;
   }
-  .col.offset-narrow-7 {
+  .col.offset-narrow-pc-7 {
     margin-left: 29.1666666667%;
   }
-  .col.offset-narrow-8 {
+  .col.offset-narrow-pc-8 {
     margin-left: 33.3333333333%;
   }
-  .col.offset-narrow-9 {
+  .col.offset-narrow-pc-9 {
     margin-left: 37.5%;
   }
-  .col.offset-narrow-10 {
+  .col.offset-narrow-pc-10 {
     margin-left: 41.6666666667%;
   }
-  .col.offset-narrow-11 {
+  .col.offset-narrow-pc-11 {
     margin-left: 45.8333333333%;
   }
-  .col.offset-narrow-12 {
+  .col.offset-narrow-pc-12 {
     margin-left: 50%;
   }
-  .col.offset-narrow-13 {
+  .col.offset-narrow-pc-13 {
     margin-left: 54.1666666667%;
   }
-  .col.offset-narrow-14 {
+  .col.offset-narrow-pc-14 {
     margin-left: 58.3333333333%;
   }
-  .col.offset-narrow-15 {
+  .col.offset-narrow-pc-15 {
     margin-left: 62.5%;
   }
-  .col.offset-narrow-16 {
+  .col.offset-narrow-pc-16 {
     margin-left: 66.6666666667%;
   }
-  .col.offset-narrow-17 {
+  .col.offset-narrow-pc-17 {
     margin-left: 70.8333333333%;
   }
-  .col.offset-narrow-18 {
+  .col.offset-narrow-pc-18 {
     margin-left: 75%;
   }
-  .col.offset-narrow-19 {
+  .col.offset-narrow-pc-19 {
     margin-left: 79.1666666667%;
   }
-  .col.offset-narrow-20 {
+  .col.offset-narrow-pc-20 {
     margin-left: 83.3333333333%;
   }
-  .col.offset-narrow-21 {
+  .col.offset-narrow-pc-21 {
     margin-left: 87.5%;
   }
-  .col.offset-narrow-22 {
+  .col.offset-narrow-pc-22 {
     margin-left: 91.6666666667%;
   }
-  .col.offset-narrow-23 {
+  .col.offset-narrow-pc-23 {
     margin-left: 95.8333333333%;
   }
-  .col.offset-narrow-24 {
+  .col.offset-narrow-pc-24 {
     margin-left: 100%;
   }
 }

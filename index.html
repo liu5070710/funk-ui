@@ -38,8 +38,10 @@
 <body>
    <div id="app">
       <funk-row>
-         <funk-col  :phone="{span:8}" :ipad="{span:12}" :pc="{span:16}">1</funk-col>
-         <funk-col  :phone="{span:16}":ipad="{span:12}" :pc="{span:8}">2</funk-col>
+         <funk-col :phone="{span:2}" :ipad="{span:6}" :narrow-pc="{span:12}" :pc="{span:16}" :wide-pc="{span:22}">1
+         </funk-col>
+         <funk-col :phone="{span:22}" :ipad="{span:16}" :narrow-pc="{span:12}" :pc="{span:8}" :wide-pc="{span:2}">2
+         </funk-col>
       </funk-row>
       <funk-row>
          <funk-col>1</funk-col>

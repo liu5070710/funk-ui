@@ -27,7 +27,9 @@ export default {
   computed: {
     colClass() {
       let { span, offset, phone, ipad, narrowPc, pc, widePc } = this;
-      let phoneClass = [];
+      // let phoneClass = [];
+      console.log(narrowPc);
+      
       return [
         span && `col-${span}`,
         offset && `offset-${offset}`,
@@ -101,13 +103,13 @@ export default {
   }
   //窄屏pc
   @media (min-width: 769px) and (max-width: 992px) {
-    $class-prefix: col-narrow-;
+    $class-prefix: col-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         width: ($n / 24) * 100%;
       }
     }
-    $class-prefix: offset-narrow-;
+    $class-prefix: offset-narrow-pc-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
         margin-left: ($n / 24) * 100%;
