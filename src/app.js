@@ -11,6 +11,8 @@ import Container from './container.vue';
 import Slider from './slider.vue';
 import Footer from './footer.vue';
 
+import toastPlugin from './toast-plugin.js'
+Vue.use(toastPlugin)
 
 Vue.component('funk-button',Button)
 // Vue.component('funk-icon',Icon)
@@ -36,7 +38,13 @@ new Vue({
    methods:{
       inputChange({target}){
          console.log(target.value);
-         
+      },
+      toastTest(){
+         console.log('toast test clicked');
+         this.$toast('这是一条提示信息')
       }
+   },
+   mounted(){
+      
    }
 })

@@ -14,7 +14,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$children);
     this.$children.forEach(child => {
       if (child.$options.name === "FunkSlider") {
         this.layoutClass.hasSlider = true;
