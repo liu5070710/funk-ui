@@ -13296,8 +13296,17 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
 var _default = {
-  name: 'FunkSlider'
+  name: "FunkSlider",
+  data: function data() {
+    return {
+      sliderShow: true
+    };
+  },
+  methods: {}
 };
 exports.default = _default;
         var $7e83b1 = exports.default || module.exports;
@@ -13312,7 +13321,11 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "slider" }, [_vm._t("default")], 2)
+  return _c("transition", { attrs: { name: "fade" } }, [
+    _vm.sliderShow
+      ? _c("div", { staticClass: "slider" }, [_vm._t("default")], 2)
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

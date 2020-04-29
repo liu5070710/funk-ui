@@ -17,7 +17,7 @@ export default {
     console.log(this.$children);
     this.$children.forEach(child => {
       if (child.$options.name === "FunkSlider") {
-         this.layoutClass.hasSlider = true
+        this.layoutClass.hasSlider = true;
       }
     });
   }
@@ -25,11 +25,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .layout {
-   flex-grow: 1;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   &.hasSlider {
-     flex-direction: row;
+    flex-direction: row;
   }
 }
 </style>  

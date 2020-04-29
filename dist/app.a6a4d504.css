@@ -1011,3 +1011,17 @@
 .container[data-v-37322e] {
   flex-grow: 1;
 }
+.slider[data-v-7e83b1] {
+  position: relative;
+}
+.slider > .button[data-v-7e83b1] {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.fade-enter-active[data-v-7e83b1], .fade-leave-active[data-v-7e83b1] {
+  transition: all 0.8s;
+}
+.fade-enter[data-v-7e83b1], .fade-leave-to[data-v-7e83b1] {
+  margin-left: -150px;
+}

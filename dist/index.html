@@ -23,46 +23,56 @@
          --border-color-hover: #666;
       }</style>
    <style>#app {
-         margin: 0 20px 0 20px;
+         /* margin: 0 20px 0 20px; */
       }
 
       .box {
          margin: 50px;
       }
 
-      
+
       .demo {
          min-height: 100px;
          border: 1px solid #666;
+      }
+      .funk-slider {
+         background-color: #333;
+         width: 150px;
+      }
+      .funk-header {
+         background-color: #999;
+         height: 100px;
+      }
+      .funk-footer {
+         background-color: #666;
       }</style>
 
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
 
 <body>
    <div id="app">
-      <funk-layout style="height: 100vh;">
+      <!-- <funk-layout style="height: 100vh;">
          <funk-header class="funk-header">header</funk-header>
          <funk-container class="funk-container">container</funk-container>
          <funk-footer class="funk-footer">footer</funk-footer>
-      </funk-layout>
+      </funk-layout> -->
 
-      <funk-layout>
+      <!-- <funk-layout >
          <funk-header class="demo">header</funk-header>
-         <funk-layout>
+         <funk-layout >
             <funk-slider class="demo">slider</funk-slider>
             <funk-container class="demo">container</funk-container>
          </funk-layout>
          <funk-footer class="demo">footer</funk-footer>
-      </funk-layout>
+      </funk-layout> -->
 
-      <funk-layout>
-         <funk-slider class="demo">slider</funk-slider>
+      <funk-layout style="height: 100vh;">
+         <funk-slider class="funk-slider">slider</funk-slider>
          <funk-layout>
-            <funk-header class="demo">header</funk-header>
-            <funk-container class="demo">container</funk-container>
-            <funk-footer class="demo">footer</funk-footer>
+            <funk-header class="funk-header">header</funk-header>
+            <funk-container>container</funk-container>
+            <funk-footer class="funk-footer">footer</funk-footer>
          </funk-layout>
-         
       </funk-layout>
 
 
