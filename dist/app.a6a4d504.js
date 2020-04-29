@@ -12518,8 +12518,7 @@ var _default = {
   components: {
     'funk-icon': _icon.default
   },
-  mounted: function mounted() {
-    console.log(this.iconPosition);
+  mounted: function mounted() {// console.log(this.iconPosition);
   },
   data: function data() {
     return {};
@@ -12847,7 +12846,34 @@ render._withStripped = true
       }
     })();
 },{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/row.vue":[function(require,module,exports) {
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+var _default = {
+  name: "Funk-Row",
+  props: {
+    gutter: {
+      type: [Number, String]
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    console.log(this.$children);
+    this.$children.forEach(function (child) {
+      return child.gutter = _this.gutter;
+    });
+  }
+};
+exports.default = _default;
         var $743dc9 = exports.default || module.exports;
       
       if (typeof $743dc9 === 'function') {
@@ -12860,7 +12886,18 @@ render._withStripped = true
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    {
+      staticClass: "row",
+      style: {
+        marginLeft: -_vm.gutter / 2 + "px",
+        marginRight: -_vm.gutter / 2 + "px"
+      }
+    },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -12869,7 +12906,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-743dc9",
+            _scopeId: null,
             functional: undefined
           };
         })());
@@ -12910,6 +12947,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 //
 //
 //
+function validator(value) {
+  var flag = true;
+  var keys = Object.keys(value);
+  keys.forEach(function (key) {
+    if (!["span", "offset", "gutter"].includes(key)) flag = false;
+  });
+  return flag;
+}
+
 var _default = {
   name: "Funk-Col",
   props: {
@@ -12918,6 +12964,49 @@ var _default = {
     },
     offset: {
       type: [Number, String]
+    },
+    gutter: {
+      type: [Number, String]
+    },
+    phone: {
+      type: Object,
+      validator: validator
+    },
+    ipad: {
+      type: Object,
+      validator: validator
+    },
+    narrowPc: {
+      type: Object,
+      validator: validator
+    },
+    pc: {
+      type: Object,
+      validator: validator
+    },
+    widePc: {
+      type: Object,
+      validator: validator
+    }
+  },
+  computed: {
+    colClass: function colClass() {
+      var span = this.span,
+          offset = this.offset,
+          phone = this.phone,
+          ipad = this.ipad,
+          narrowPc = this.narrowPc,
+          pc = this.pc,
+          widePc = this.widePc;
+      var phoneClass = [];
+      return [span && "col-".concat(span), offset && "offset-".concat(offset), phone && "col-phone-".concat(phone.span), ipad && "col-ipad-".concat(ipad.span), narrowPc && "col-narrow-pc-".concat(narrowPc.span), pc && "col-pc-".concat(pc.span), widePc && "col-wide-pc-".concat(widePc.span)];
+    },
+    colStyle: function colStyle() {
+      var gutter = this.gutter;
+      return {
+        paddingLeft: gutter / 2 + "px",
+        paddingRight: gutter / 2 + "px"
+      };
     }
   },
   created: function created() {
@@ -12939,10 +13028,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col",
-      class: ["col-" + _vm.span, _vm.offset && "offset-" + _vm.offset]
-    },
+    { staticClass: "col", class: _vm.colClass, style: _vm.colStyle },
     [_vm._t("default")],
     2
   )
@@ -13052,7 +13138,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14948" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11523" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

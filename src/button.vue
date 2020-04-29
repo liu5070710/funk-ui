@@ -14,7 +14,7 @@ export default {
     'funk-icon': Icon
   },
   mounted() {
-    console.log(this.iconPosition);
+    // console.log(this.iconPosition);
   },
   data() {
     return {};
