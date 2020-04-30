@@ -1033,6 +1033,10 @@
 }
 .tabs-head > .actions-wrapper[data-v-e90b5b] {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
 }
 .tabs-item[data-v-b1e8c4] {
   display: flex;
@@ -1043,6 +1047,10 @@
 .tabs-item.active[data-v-b1e8c4] {
   font-weight: 600;
   border-bottom: 2px solid #5b8895;
+  transition: all 0.1s;
+}
+.tabs-item.disabled[data-v-b1e8c4] {
+  color: gray;
 }
 .tabs-pane.active[data-v-a12b1c] {
   background-color: #31b990;

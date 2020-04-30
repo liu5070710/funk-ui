@@ -25,6 +25,10 @@ $tab-height:40px;
   align-content: center;
   > .actions-wrapper {
      margin-left: auto;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0 1em;
   }
 }
 </style>

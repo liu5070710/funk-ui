@@ -13621,7 +13621,8 @@ var _default = {
   computed: {
     itemClass: function itemClass() {
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       };
     }
   },
@@ -13650,7 +13651,11 @@ var _default = {
     });
   },
   methods: {
-    xxx: function xxx() {
+    itemClick: function itemClick() {
+      if (this.disabled) {
+        return;
+      }
+
       this.eventBus.$emit("update:selected", this.name);
     }
   }
@@ -13670,7 +13675,11 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "tabs-item", class: _vm.itemClass, on: { click: _vm.xxx } },
+    {
+      staticClass: "tabs-item",
+      class: _vm.itemClass,
+      on: { click: _vm.itemClick }
+    },
     [_vm._t("default")],
     2
   )
