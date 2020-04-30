@@ -45,9 +45,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@keyframes fade-in {
+   0% {opacity: 0;}
+   100% {opacity: 100;}
+}
 .toast {
   $font-size: 14px;
   $toast-min-height: 40px;
+  animation: fade-in 1s;
   position: fixed;
   display: flex;
   align-items: center;
