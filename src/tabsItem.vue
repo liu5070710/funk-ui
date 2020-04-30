@@ -55,7 +55,8 @@ export default {
   padding: 0 2em;
   flex-shrink: 0;
   &.active {
-    background-color: rgb(64, 77, 189);
+    font-weight: 600;
+    border-bottom: 2px solid rgb(91, 136, 149);
   }
 }
 </style>

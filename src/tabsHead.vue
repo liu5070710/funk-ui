@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 $tab-height:40px;
 .tabs-head {
-  border: 1px solid red;
+//   border: 1px solid red;
   height: $tab-height;
   display: flex;
   justify-content: flex-start;

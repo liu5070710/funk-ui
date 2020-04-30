@@ -1026,7 +1026,6 @@
   margin-left: -150px;
 }
 .tabs-head[data-v-e90b5b] {
-  border: 1px solid red;
   height: 40px;
   display: flex;
   justify-content: flex-start;
@@ -1042,7 +1041,8 @@
   flex-shrink: 0;
 }
 .tabs-item.active[data-v-b1e8c4] {
-  background-color: #404dbd;
+  font-weight: 600;
+  border-bottom: 2px solid #5b8895;
 }
 .tabs-pane.active[data-v-a12b1c] {
   background-color: #31b990;
