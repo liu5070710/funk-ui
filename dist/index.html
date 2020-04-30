@@ -53,15 +53,25 @@
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
 
 <body>
-   <div id="app">
+   <div id="app" style="padding: 50px 50px;">
+
+      <!-- 测试popover -->
+      <funk-popover>
+         <template slot="content">
+            <div>这是内容</div>
+         </template>
+         <button>点击我</button>
+      </funk-popover>
+
+
       <!-- 测试tab -->
-      <funk-tabs :selected.sync="selectedTab"> 
+      <!-- <funk-tabs :selected.sync="selectedTab"> 
          <funk-tabs-head>
             <template slot="actions">
                <button>点击</button>
             </template>
             <funk-tabs-item name="women">美女</funk-tabs-item>
-            <funk-tabs-item name="finance" disabled="">财经</funk-tabs-item>
+            <funk-tabs-item name="finance" disabled>财经</funk-tabs-item>
             <funk-tabs-item name="sports">体育</funk-tabs-item>
          </funk-tabs-head>
          <funk-tabs-body>
@@ -69,7 +79,7 @@
             <funk-tabs-pane name="finance">财经相关</funk-tabs-pane>
             <funk-tabs-pane name="sports">体育相关</funk-tabs-pane>
          </funk-tabs-body>
-      </funk-tabs>
+      </funk-tabs> -->
 
 
 

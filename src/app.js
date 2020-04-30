@@ -20,6 +20,8 @@ import TabsBody from './tabsBody.vue';
 import TabsPane from './tabsPane.vue';
 
 import toastPlugin from './toast-plugin.js'
+
+import Popover from './popover.vue'
 Vue.use(toastPlugin)
 
 Vue.component('funk-button',Button)
@@ -42,6 +44,8 @@ Vue.component('funk-tabs-head',TabsHead)
 Vue.component('funk-tabs-item',TabsItem)
 Vue.component('funk-tabs-body',TabsBody)
 Vue.component('funk-tabs-pane',TabsPane)
+
+Vue.component('funk-popover',Popover)
 
 new Vue({
    el:'#app',

@@ -81,7 +81,7 @@ $red: #f1453d;
       outline: none;
     }
     &[disabled],
-    &[readonly] {
+    &[readOnly] {
       color: rgb(173, 173, 173);
       border: 1px solid rgb(173, 173, 173);
       cursor: not-allowed;

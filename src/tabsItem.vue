@@ -56,13 +56,15 @@ export default {
   align-items: center;
   padding: 0 2em;
   flex-shrink: 0;
+  cursor: pointer;
   &.active {
     font-weight: 600;
     border-bottom: 2px solid rgb(91, 136, 149);
     transition: all 0.1s;
   }
   &.disabled {
-     color: gray
+     color: gray;
+     cursor: not-allowed;
   }
 }
 </style>
