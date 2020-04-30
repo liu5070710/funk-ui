@@ -13436,7 +13436,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'FunkToast',
+  name: "FunkToast",
   props: {
     autoClose: {
       type: Boolean,
@@ -13450,7 +13450,7 @@ var _default = {
       type: Object,
       default: function _default() {
         return {
-          text: '关闭',
+          text: "关闭",
           callback: undefined
         };
       }
@@ -13460,13 +13460,16 @@ var _default = {
     return {};
   },
   mounted: function mounted() {
-    var _this = this;
-
-    setTimeout(function () {
-      _this.close();
-    }, this.delay * 1000);
+    this.exeAutoClose();
   },
   methods: {
+    exeAutoClose: function exeAutoClose() {
+      var _this = this;
+
+      setTimeout(function () {
+        _this.close();
+      }, this.delay * 1000);
+    },
     close: function close() {
       this.$el.remove(); //toast节点从dom真实DOM树上删除
 
@@ -13474,7 +13477,7 @@ var _default = {
     },
     closeButtonClick: function closeButtonClick() {
       this.close();
-      if (this.closeButton && typeof this.closeButton.callback === 'function') this.closeButton.callback(this);
+      if (this.closeButton && typeof this.closeButton.callback === "function") this.closeButton.callback(this);
     }
   }
 };
@@ -13563,21 +13566,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = {
   install: function install(Vue, options) {
     Vue.prototype.$toast = function (message, toastOpts) {
-      // console.log(toastOpts);
-      //propsData
-      var constructor = Vue.extend(_toast.default);
-      var toastCom = new constructor({
-        propsData: {
-          closeButton: toastOpts
-        }
-      });
-      toastCom.$slots.default = [message];
-      toastCom.$mount();
-      document.body.appendChild(toastCom.$el);
+      if (currtoast) {
+        currtoast.close();
+      }
+
+      var currtoast = createToast(Vue, message, toastOpts);
+      console.log(currtoast);
     };
   }
 };
 exports.default = _default;
+
+function createToast(Vue, message, toastOpts) {
+  var constructor = Vue.extend(_toast.default);
+  var toastCom = new constructor({
+    propsData: {
+      closeButton: toastOpts
+    }
+  });
+  toastCom.$slots.default = [message];
+  toastCom.$mount();
+  document.body.appendChild(toastCom.$el);
+  return toastCom;
+}
 },{"./toast.vue":"src/toast.vue"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
