@@ -11,6 +11,12 @@ import Container from './container.vue';
 import Slider from './slider.vue';
 import Footer from './footer.vue';
 
+import Tabs from './tabs.vue';
+import TabsHead from './tabsHead.vue';
+import TabsItem from './tabsItem.vue';
+import TabsBody from './tabsBody.vue';
+import TabsPane from './tabsPane.vue';
+
 import toastPlugin from './toast-plugin.js'
 Vue.use(toastPlugin)
 
@@ -26,6 +32,12 @@ Vue.component('funk-header',Header)
 Vue.component('funk-container',Container)
 Vue.component('funk-slider',Slider)
 Vue.component('funk-footer',Footer)
+
+Vue.component('funk-tabs',Tabs)
+Vue.component('funk-tabsHead',TabsHead)
+Vue.component('funk-tabsItem',TabsItem)
+Vue.component('funk-tabsBody',TabsBody)
+Vue.component('funk-tabsPane',TabsPane)
 
 new Vue({
    el:'#app',
