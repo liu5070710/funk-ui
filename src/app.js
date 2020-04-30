@@ -50,7 +50,7 @@ new Vue({
       loading2:false,
       loading3:true,
       msg:'hi',
-      selectedTab:'sports'
+      selectedTab:'women'
    },
    methods:{
       inputChange({target}){

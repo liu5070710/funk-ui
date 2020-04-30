@@ -13467,7 +13467,9 @@ var _default = {
 
     };
   },
-  created: function created() {//  this.$emit("update:selected", "xxx");
+  mounted: function mounted() {
+    //  this.$emit("update:selected", "xxx");
+    this.eventBus.$emit("update:selected", this.selected);
   }
 };
 exports.default = _default;
@@ -13531,11 +13533,12 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "FunkTabsHead",
   inject: ["eventBus"],
-  created: function created() {
-    console.log(this.eventBus);
+  created: function created() {//  console.log(this.eventBus);
   }
 };
 exports.default = _default;
@@ -13554,7 +13557,11 @@ exports.default = _default;
   return _c(
     "div",
     { staticClass: "tabs-head" },
-    [_vm._t("default"), _vm._v(" "), _vm._t("actions")],
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { staticClass: "actions-wrapper" }, [_vm._t("actions")], 2)
+    ],
     2
   )
 }
@@ -13606,6 +13613,18 @@ exports.default = void 0;
 var _default = {
   name: "FunkTabsItem",
   inject: ["eventBus"],
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  computed: {
+    itemClass: function itemClass() {
+      return {
+        active: this.active
+      };
+    }
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -13617,9 +13636,17 @@ var _default = {
     }
   },
   created: function created() {
+    var _this = this;
+
     //tabs的所有组件监听update:selected事件包括自己
     this.eventBus.$on("update:selected", function (name) {
-      console.log(name);
+      if (name === _this.name) {
+        console.log("".concat(_this.name, "\u88AB\u9009\u4E2D\u4E86"));
+        _this.active = true;
+      } else {
+        console.log("".concat(_this.name, "\u672A\u88AB\u9009\u4E2D"));
+        _this.active = false;
+      }
     });
   },
   methods: {
@@ -13643,7 +13670,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "tabs-item", on: { click: _vm.xxx } },
+    { staticClass: "tabs-item", class: _vm.itemClass, on: { click: _vm.xxx } },
     [_vm._t("default")],
     2
   )
@@ -13758,12 +13785,38 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'FunkTabsPane',
+  name: "FunkTabsPane",
   inject: ["eventBus"],
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  computed: {
+    paneClass: function paneClass() {
+      return {
+        active: this.active
+      };
+    }
+  },
+  props: {
+    name: {
+      type: Number | String,
+      required: true
+    }
+  },
   created: function created() {
+    var _this = this;
+
     //tabs的所有组件监听update:selected事件包括自己
     this.eventBus.$on("update:selected", function (name) {
-      console.log(name);
+      if (name === _this.name) {
+        console.log("".concat(_this.name, "\u76F8\u5173\u88AB\u9009\u4E2D\u4E86"));
+        _this.active = true;
+      } else {
+        console.log("".concat(_this.name, "\u76F8\u5173\u672A\u88AB\u9009\u4E2D"));
+        _this.active = false;
+      }
     });
   }
 };
@@ -13780,7 +13833,14 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tabs-pane" }, [_vm._t("default")], 2)
+  return _vm.active
+    ? _c(
+        "div",
+        { staticClass: "tabs-pane", class: _vm.paneClass },
+        [_vm._t("default")],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -14064,7 +14124,7 @@ new _vue.default({
     loading2: false,
     loading3: true,
     msg: 'hi',
-    selectedTab: 'sports'
+    selectedTab: 'women'
   },
   methods: {
     inputChange: function inputChange(_ref) {

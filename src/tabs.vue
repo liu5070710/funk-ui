@@ -30,8 +30,9 @@ export default {
       eventBus: this.eventBus //为所有该组件的子组件提供eventBus
     };
   },
-  created() {
+  mounted() {
     //  this.$emit("update:selected", "xxx");
+    this.eventBus.$emit("update:selected",this.selected)
   }
 };
 </script>

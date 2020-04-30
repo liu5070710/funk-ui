@@ -1025,6 +1025,28 @@
 .fade-enter[data-v-7e83b1], .fade-leave-to[data-v-7e83b1] {
   margin-left: -150px;
 }
+.tabs-head[data-v-e90b5b] {
+  border: 1px solid red;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+.tabs-head > .actions-wrapper[data-v-e90b5b] {
+  margin-left: auto;
+}
+.tabs-item[data-v-b1e8c4] {
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
+  flex-shrink: 0;
+}
+.tabs-item.active[data-v-b1e8c4] {
+  background-color: #404dbd;
+}
+.tabs-pane.active[data-v-a12b1c] {
+  background-color: #31b990;
+}
 @keyframes fade-in-data-v-4e37f3 {
 0% {
     opacity: 0;
