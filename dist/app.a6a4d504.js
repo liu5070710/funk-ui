@@ -13434,6 +13434,7 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: 'FunkToast',
   props: {
@@ -13444,6 +13445,15 @@ var _default = {
     delay: {
       type: [Number, String],
       default: 2
+    },
+    closeButton: {
+      type: Object,
+      default: function _default() {
+        return {
+          text: '关闭',
+          callback: undefined
+        };
+      }
     }
   },
   data: function data() {
@@ -13458,8 +13468,13 @@ var _default = {
   },
   methods: {
     close: function close() {
-      this.$el.remove();
-      this.$destroy();
+      this.$el.remove(); //toast节点从dom真实DOM树上删除
+
+      this.$destroy(); //toast节点从AST(内存)中删除
+    },
+    closeButtonClick: function closeButtonClick() {
+      this.close();
+      if (this.closeButton && typeof this.closeButton.callback === 'function') this.closeButton.callback(this);
     }
   }
 };
@@ -13476,7 +13491,29 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "toast" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "toast" },
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _vm.closeButton
+        ? _c(
+            "span",
+            {
+              staticClass: "closeButton",
+              on: {
+                click: function($event) {
+                  return _vm.closeButtonClick()
+                }
+              }
+            },
+            [_vm._v(_vm._s(_vm.closeButton.text))]
+          )
+        : _vm._e()
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13525,9 +13562,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = {
   install: function install(Vue, options) {
-    Vue.prototype.$toast = function (message) {
+    Vue.prototype.$toast = function (message, toastOpts) {
+      // console.log(toastOpts);
+      //propsData
       var constructor = Vue.extend(_toast.default);
-      var toastCom = new constructor();
+      var toastCom = new constructor({
+        propsData: {
+          closeButton: toastOpts
+        }
+      });
       toastCom.$slots.default = [message];
       toastCom.$mount();
       document.body.appendChild(toastCom.$el);
@@ -13602,8 +13645,14 @@ new _vue.default({
       console.log(target.value);
     },
     toastTest: function toastTest() {
-      console.log('toast test clicked');
-      this.$toast('这是一条提示信息');
+      // this.$toast() 第二个参数传关闭按钮的配置参数
+      this.$toast('这是一条提示信息', {
+        text: 'ok',
+        callback: function callback(toast) {
+          console.log('用户点击ok');
+          console.log('回传的toast实例', toast);
+        }
+      });
     }
   },
   mounted: function mounted() {}

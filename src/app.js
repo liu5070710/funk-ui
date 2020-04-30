@@ -40,8 +40,14 @@ new Vue({
          console.log(target.value);
       },
       toastTest(){
-         console.log('toast test clicked');
-         this.$toast('这是一条提示信息')
+         // this.$toast() 第二个参数传关闭按钮的配置参数
+         this.$toast('这是一条提示信息',{
+            text:'ok',
+            callback(toast){
+               console.log('用户点击ok');
+               console.log('回传的toast实例',toast);
+            }
+         })
       }
    },
    mounted(){
