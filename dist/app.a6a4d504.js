@@ -12441,7 +12441,8 @@ exports.default = void 0;
 //
 //
 var _default = {
-  props: ['name']
+  props: ["name"],
+  created: function created() {}
 };
 exports.default = _default;
         var $36c5f9 = exports.default || module.exports;
@@ -12518,7 +12519,8 @@ var _default = {
   components: {
     "funk-icon": _icon.default
   },
-  mounted: function mounted() {// console.log(this.iconPosition);
+  mounted: function mounted() {
+    console.log(this.iconPosition);
   },
   data: function data() {
     return {};
@@ -13429,11 +13431,44 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _vue = _interopRequireDefault(require("vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
 //
 //
 //
 var _default = {
-  name: 'FunkTabs'
+  name: "FunkTabs",
+  props: {
+    selected: {
+      type: String,
+      required: true
+    },
+    direction: {
+      type: String,
+      default: "horizontal",
+      validator: function validator(value) {
+        return ["horizontal", "vertical"].indexOf(value) >= 0;
+      }
+    }
+  },
+  data: function data() {
+    return {
+      eventBus: new _vue.default()
+    };
+  },
+  provide: function provide() {
+    return {
+      eventBus: this.eventBus //为所有该组件的子组件提供eventBus
+
+    };
+  },
+  created: function created() {//  this.$emit("update:selected", "xxx");
+  }
 };
 exports.default = _default;
         var $a2a5ae = exports.default || module.exports;
@@ -13448,7 +13483,7 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "tabs" }, [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13483,7 +13518,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabsHead.vue":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/tabsHead.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13493,8 +13528,15 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
 var _default = {
-  name: 'FunkTabsHead'
+  name: "FunkTabsHead",
+  inject: ["eventBus"],
+  created: function created() {
+    console.log(this.eventBus);
+  }
 };
 exports.default = _default;
         var $e90b5b = exports.default || module.exports;
@@ -13509,7 +13551,12 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    { staticClass: "tabs-head" },
+    [_vm._t("default"), _vm._v(" "), _vm._t("actions")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13554,8 +13601,32 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
-  name: 'FunkTabsItem'
+  name: "FunkTabsItem",
+  inject: ["eventBus"],
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    name: {
+      type: Number | String,
+      required: true
+    }
+  },
+  created: function created() {
+    //tabs的所有组件监听update:selected事件包括自己
+    this.eventBus.$on("update:selected", function (name) {
+      console.log(name);
+    });
+  },
+  methods: {
+    xxx: function xxx() {
+      this.eventBus.$emit("update:selected", this.name);
+    }
+  }
 };
 exports.default = _default;
         var $b1e8c4 = exports.default || module.exports;
@@ -13570,7 +13641,12 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    { staticClass: "tabs-item", on: { click: _vm.xxx } },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13615,8 +13691,11 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
-  name: 'FunkTabsBody'
+  name: 'FunkTabsBody',
+  inject: ["eventBus"]
 };
 exports.default = _default;
         var $7c2413 = exports.default || module.exports;
@@ -13631,7 +13710,7 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "tabs-body" }, [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13676,8 +13755,17 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
-  name: 'FunkTabsPane'
+  name: 'FunkTabsPane',
+  inject: ["eventBus"],
+  created: function created() {
+    //tabs的所有组件监听update:selected事件包括自己
+    this.eventBus.$on("update:selected", function (name) {
+      console.log(name);
+    });
+  }
 };
 exports.default = _default;
         var $a12b1c = exports.default || module.exports;
@@ -13692,7 +13780,7 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { staticClass: "tabs-pane" }, [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13901,6 +13989,8 @@ var _vue = _interopRequireDefault(require("vue"));
 
 var _button = _interopRequireDefault(require("./button.vue"));
 
+var _icon = _interopRequireDefault(require("./icon.vue"));
+
 var _buttonGroup = _interopRequireDefault(require("./buttonGroup.vue"));
 
 var _input = _interopRequireDefault(require("./input.vue"));
@@ -13933,11 +14023,11 @@ var _toastPlugin = _interopRequireDefault(require("./toast-plugin.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Icon from './icon.vue'
 _vue.default.use(_toastPlugin.default);
 
-_vue.default.component('funk-button', _button.default); // Vue.component('funk-icon',Icon)
+_vue.default.component('funk-button', _button.default);
 
+_vue.default.component('funk-icon', _icon.default);
 
 _vue.default.component('funk-button-group', _buttonGroup.default);
 
@@ -13959,13 +14049,13 @@ _vue.default.component('funk-footer', _footer.default);
 
 _vue.default.component('funk-tabs', _tabs.default);
 
-_vue.default.component('funk-tabsHead', _tabsHead.default);
+_vue.default.component('funk-tabs-head', _tabsHead.default);
 
-_vue.default.component('funk-tabsItem', _tabsItem.default);
+_vue.default.component('funk-tabs-item', _tabsItem.default);
 
-_vue.default.component('funk-tabsBody', _tabsBody.default);
+_vue.default.component('funk-tabs-body', _tabsBody.default);
 
-_vue.default.component('funk-tabsPane', _tabsPane.default);
+_vue.default.component('funk-tabs-pane', _tabsPane.default);
 
 new _vue.default({
   el: '#app',
@@ -13973,7 +14063,8 @@ new _vue.default({
     loading1: false,
     loading2: false,
     loading3: true,
-    msg: 'hi'
+    msg: 'hi',
+    selectedTab: 'sports'
   },
   methods: {
     inputChange: function inputChange(_ref) {
@@ -13993,7 +14084,7 @@ new _vue.default({
   },
   mounted: function mounted() {}
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./buttonGroup.vue":"src/buttonGroup.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue","./layout.vue":"src/layout.vue","./header.vue":"src/header.vue","./container.vue":"src/container.vue","./slider.vue":"src/slider.vue","./footer.vue":"src/footer.vue","./tabs.vue":"src/tabs.vue","./tabsHead.vue":"src/tabsHead.vue","./tabsItem.vue":"src/tabsItem.vue","./tabsBody.vue":"src/tabsBody.vue","./tabsPane.vue":"src/tabsPane.vue","./toast-plugin.js":"src/toast-plugin.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./icon.vue":"src/icon.vue","./buttonGroup.vue":"src/buttonGroup.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue","./layout.vue":"src/layout.vue","./header.vue":"src/header.vue","./container.vue":"src/container.vue","./slider.vue":"src/slider.vue","./footer.vue":"src/footer.vue","./tabs.vue":"src/tabs.vue","./tabsHead.vue":"src/tabsHead.vue","./tabsItem.vue":"src/tabsItem.vue","./tabsBody.vue":"src/tabsBody.vue","./tabsPane.vue":"src/tabsPane.vue","./toast-plugin.js":"src/toast-plugin.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

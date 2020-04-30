@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Button from './button.vue'
-// import Icon from './icon.vue'
+
+import Icon from './icon.vue'
+
 import ButtonGroup from './buttonGroup.vue'
 import Input from './input.vue'
 import Row from './row.vue';
@@ -21,7 +23,9 @@ import toastPlugin from './toast-plugin.js'
 Vue.use(toastPlugin)
 
 Vue.component('funk-button',Button)
-// Vue.component('funk-icon',Icon)
+
+Vue.component('funk-icon',Icon)
+
 Vue.component('funk-button-group',ButtonGroup)
 Vue.component('funk-input',Input)
 Vue.component('funk-row',Row)
@@ -34,10 +38,10 @@ Vue.component('funk-slider',Slider)
 Vue.component('funk-footer',Footer)
 
 Vue.component('funk-tabs',Tabs)
-Vue.component('funk-tabsHead',TabsHead)
-Vue.component('funk-tabsItem',TabsItem)
-Vue.component('funk-tabsBody',TabsBody)
-Vue.component('funk-tabsPane',TabsPane)
+Vue.component('funk-tabs-head',TabsHead)
+Vue.component('funk-tabs-item',TabsItem)
+Vue.component('funk-tabs-body',TabsBody)
+Vue.component('funk-tabs-pane',TabsPane)
 
 new Vue({
    el:'#app',
@@ -45,7 +49,8 @@ new Vue({
       loading1:false,
       loading2:false,
       loading3:true,
-      msg:'hi'
+      msg:'hi',
+      selectedTab:'sports'
    },
    methods:{
       inputChange({target}){

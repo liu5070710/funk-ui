@@ -35,14 +35,17 @@
          min-height: 100px;
          border: 1px solid #666;
       }
+
       .funk-slider {
          background-color: #333;
          width: 150px;
       }
+
       .funk-header {
          background-color: #999;
          height: 100px;
       }
+
       .funk-footer {
          background-color: #666;
       }</style>
@@ -51,9 +54,29 @@
 
 <body>
    <div id="app">
+      <!-- 测试tab -->
+      <funk-tabs :selected.sync="selectedTab"> 
+         <funk-tabs-head>
+            <template slot="actions">
+               <button>点击</button>
+            </template>
+            <funk-tabs-item name="women"><funk-icon name="#i-settings"></funk-icon>美女</funk-tabs-item>
+            <funk-tabs-item name="finance" disabled="">财经</funk-tabs-item>
+            <funk-tabs-item name="sports">体育</funk-tabs-item>
+         </funk-tabs-head>
+         <funk-tabs-body>
+            <funk-tabs-pane name="women">美女相关</funk-tabs-pane>
+            <funk-tabs-pane name="finance">财经相关</funk-tabs-pane>
+            <funk-tabs-pane name="sports">体育相关</funk-tabs-pane>
+         </funk-tabs-body>
+      </funk-tabs>
+
+
+
+
       <!-- 测试toast -->
-      <button @click="toastTest">点我</button>
-      
+      <!-- <button @click="toastTest">点我</button> -->
+
       <!-- <funk-layout style="height: 100vh;">
          <funk-header class="funk-header">header</funk-header>
          <funk-container class="funk-container">container</funk-container>
@@ -104,7 +127,6 @@
          <funk-input value='李四' disabled></funk-input>
          <funk-input value='王五' readOnly></funk-input>
       </div>
-
       <div class="box">
          <funk-input @change='inputChange' error="密码不得少于7个字符"></funk-input>
       </div> -->
