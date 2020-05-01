@@ -14291,15 +14291,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 var _default = {
   name: "FunkCollapse",
+  props: {
+    single: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: function data() {
     return {
       eventBus: new _vue.default()
     };
   },
   provide: function provide() {
-    return {
-      eventBus: this.eventBus
-    };
+    if (this.single) {
+      return {
+        eventBus: this.eventBus
+      };
+    }
   }
 };
 exports.default = _default;
@@ -14366,8 +14374,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
 var _default = {
   name: "FunkCollapseItem",
   props: {
@@ -14381,11 +14387,11 @@ var _default = {
       open: false
     };
   },
-  inject: ['eventBus'],
+  inject: ["eventBus"],
   mounted: function mounted() {
     var _this = this;
 
-    this.eventBus.$on('update:selected', function (vm) {
+    this.eventBus && this.eventBus.$on("update:selected", function (vm) {
       if (vm !== _this) {
         _this.close();
       }
@@ -14397,7 +14403,7 @@ var _default = {
         this.open = false;
       } else {
         this.open = true;
-        this.eventBus && this.eventBus.$emit('update:selected', this);
+        this.eventBus && this.eventBus.$emit("update:selected", this);
       }
     },
     close: function close() {
@@ -14420,7 +14426,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "collapseItem" }, [
     _c("div", { staticClass: "title", on: { click: _vm.toggle } }, [
-      _vm._v("\n    " + _vm._s(_vm.title) + "\n  ")
+      _vm._v(_vm._s(_vm.title))
     ]),
     _vm._v(" "),
     _vm.open
