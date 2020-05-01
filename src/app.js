@@ -60,7 +60,7 @@ new Vue({
       loading3: true,
       msg: 'hi',
       selectedTab: 'women',
-      selectedTab: 2,
+      selectedTab: ['2'],
       single: false
    },
    methods: {

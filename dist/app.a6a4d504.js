@@ -14289,6 +14289,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 var _default = {
   name: "FunkCollapse",
   props: {
@@ -14297,20 +14298,8 @@ var _default = {
       default: false
     },
     selected: {
-      type: String | Number
+      type: Array
     }
-  },
-  mounted: function mounted() {
-    var _this = this;
-
-    this.eventBus.$emit("update:selected", this.selected);
-    this.eventBus.$on("update:selected", function (name) {
-      //向组件外通知组件内的选中状态
-      _this.$emit("update:selected", name);
-    });
-    this.$children.forEach(function (vm) {
-      vm.single = _this.single;
-    });
   },
   data: function data() {
     return {
@@ -14318,10 +14307,36 @@ var _default = {
     };
   },
   provide: function provide() {
-    // if (this.single) {
     return {
       eventBus: this.eventBus
-    }; // }
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.eventBus.$emit('update:selected', this.selected);
+    this.eventBus.$on('update:addSelected', function (name) {
+      var selectedCopy = JSON.parse(JSON.stringify(_this.selected));
+
+      if (_this.single) {
+        selectedCopy = [name];
+      } else {
+        selectedCopy.push(name);
+      }
+
+      _this.eventBus.$emit('update:selected', selectedCopy);
+
+      _this.$emit('update:selected', selectedCopy);
+    });
+    this.eventBus.$on('update:removeSelected', function (name) {
+      var selectedCopy = JSON.parse(JSON.stringify(_this.selected));
+      var index = selectedCopy.indexOf(name);
+      selectedCopy.splice(index, 1);
+
+      _this.eventBus.$emit('update:selected', selectedCopy);
+
+      _this.$emit('update:selected', selectedCopy);
+    });
   }
 };
 exports.default = _default;
@@ -14388,6 +14403,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "FunkCollapseItem",
   props: {
@@ -14396,43 +14413,34 @@ var _default = {
       required: true
     },
     name: {
-      type: String | Number,
+      type: String,
       required: true
     }
   },
   data: function data() {
     return {
-      open: false,
-      single: false
+      open: false
     };
   },
-  inject: ["eventBus"],
+  inject: ['eventBus'],
   mounted: function mounted() {
     var _this = this;
 
-    this.eventBus && this.eventBus.$on("update:selected", function (name) {
-      if (name !== _this.name) {
-        if (_this.single) {
-          _this.close();
-        }
+    this.eventBus && this.eventBus.$on('update:selected', function (names) {
+      if (names.indexOf(_this.name) >= 0) {
+        _this.open = true;
       } else {
-        _this.show();
+        _this.open = false;
       }
     });
   },
   methods: {
     toggle: function toggle() {
       if (this.open) {
-        this.open = false;
+        this.eventBus && this.eventBus.$emit('update:removeSelected', this.name);
       } else {
-        this.eventBus && this.eventBus.$emit("update:selected", this.name);
+        this.eventBus && this.eventBus.$emit('update:addSelected', this.name);
       }
-    },
-    close: function close() {
-      this.open = false;
-    },
-    show: function show() {
-      this.open = true;
     }
   }
 };
@@ -14451,7 +14459,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "collapseItem" }, [
     _c("div", { staticClass: "title", on: { click: _vm.toggle } }, [
-      _vm._v(_vm._s(_vm.title))
+      _vm._v("\n    " + _vm._s(_vm.title) + "\n  ")
     ]),
     _vm._v(" "),
     _vm.open
@@ -14596,7 +14604,7 @@ new _vue.default({
     loading3: true,
     msg: 'hi',
     selectedTab: 'women'
-  }, _defineProperty(_data, "selectedTab", 2), _defineProperty(_data, "single", false), _data),
+  }, _defineProperty(_data, "selectedTab", ['2']), _defineProperty(_data, "single", false), _data),
   methods: {
     inputChange: function inputChange(_ref) {
       var target = _ref.target;
