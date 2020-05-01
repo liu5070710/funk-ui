@@ -13,11 +13,19 @@ export default {
       default: false
     },
     selected: {
-      type: String|Number
+      type: String | Number
     }
   },
-  mounted(){
-    this.eventBus.$emit('update:selected',this.selected)
+  mounted() {
+    this.eventBus.$emit("update:selected", this.selected);
+    this.eventBus.$on("update:selected", name => { //向组件外通知组件内的选中状态
+      this.$emit("update:selected", name); 
+    });
+    this.$children.forEach(vm =>{
+      vm.single = this.single
+    })
+    
+    
   },
   data() {
     return {
@@ -26,9 +34,9 @@ export default {
   },
   provide() {
     // if (this.single) {
-      return {
-        eventBus: this.eventBus
-      }
+    return {
+      eventBus: this.eventBus
+    };
     // }
   }
 };

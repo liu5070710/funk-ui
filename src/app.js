@@ -27,56 +27,64 @@ import collapse from './collapse.vue'
 import collapseItem from './collapse-item.vue'
 Vue.use(toastPlugin)
 
-Vue.component('funk-button',Button)
+Vue.component('funk-button', Button)
 
-Vue.component('funk-icon',Icon)
+Vue.component('funk-icon', Icon)
 
-Vue.component('funk-button-group',ButtonGroup)
-Vue.component('funk-input',Input)
-Vue.component('funk-row',Row)
-Vue.component('funk-col',Col)
+Vue.component('funk-button-group', ButtonGroup)
+Vue.component('funk-input', Input)
+Vue.component('funk-row', Row)
+Vue.component('funk-col', Col)
 
-Vue.component('funk-layout',Layout)
-Vue.component('funk-header',Header)
-Vue.component('funk-container',Container)
-Vue.component('funk-slider',Slider)
-Vue.component('funk-footer',Footer)
+Vue.component('funk-layout', Layout)
+Vue.component('funk-header', Header)
+Vue.component('funk-container', Container)
+Vue.component('funk-slider', Slider)
+Vue.component('funk-footer', Footer)
 
-Vue.component('funk-tabs',Tabs)
-Vue.component('funk-tabs-head',TabsHead)
-Vue.component('funk-tabs-item',TabsItem)
-Vue.component('funk-tabs-body',TabsBody)
-Vue.component('funk-tabs-pane',TabsPane)
+Vue.component('funk-tabs', Tabs)
+Vue.component('funk-tabs-head', TabsHead)
+Vue.component('funk-tabs-item', TabsItem)
+Vue.component('funk-tabs-body', TabsBody)
+Vue.component('funk-tabs-pane', TabsPane)
 
-Vue.component('funk-popover',Popover)
-Vue.component('funk-collapse',collapse)
-Vue.component('funk-collapse-item',collapseItem)
+Vue.component('funk-popover', Popover)
+Vue.component('funk-collapse', collapse)
+Vue.component('funk-collapse-item', collapseItem)
 
 new Vue({
-   el:'#app',
-   data:{
-      loading1:false,
-      loading2:false,
-      loading3:true,
-      msg:'hi',
-      selectedTab:'women'
+   el: '#app',
+   data: {
+      loading1: false,
+      loading2: false,
+      loading3: true,
+      msg: 'hi',
+      selectedTab: 'women',
+      selectedTab: 2,
+      single: false
    },
-   methods:{
-      inputChange({target}){
+   methods: {
+      inputChange({
+         target
+      }) {
          console.log(target.value);
       },
-      toastTest(){
+      toastTest() {
          // this.$toast() 第二个参数传关闭按钮的配置参数
-         this.$toast('这是一条提示信息',{
-            text:'ok',
-            callback(toast){
+         this.$toast('这是一条提示信息', {
+            text: 'ok',
+            callback(toast) {
                console.log('用户点击ok');
-               console.log('回传的toast实例',toast);
+               console.log('回传的toast实例', toast);
             }
          })
       }
    },
-   mounted(){
-      
+   created() {
+
+   },
+   mounted() {
+
+
    }
 })

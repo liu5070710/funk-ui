@@ -14301,7 +14301,16 @@ var _default = {
     }
   },
   mounted: function mounted() {
-    this.eventBus.$emit('update:selected', this.selected);
+    var _this = this;
+
+    this.eventBus.$emit("update:selected", this.selected);
+    this.eventBus.$on("update:selected", function (name) {
+      //向组件外通知组件内的选中状态
+      _this.$emit("update:selected", name);
+    });
+    this.$children.forEach(function (vm) {
+      vm.single = _this.single;
+    });
   },
   data: function data() {
     return {
@@ -14387,12 +14396,14 @@ var _default = {
       required: true
     },
     name: {
-      type: String | Number
+      type: String | Number,
+      required: true
     }
   },
   data: function data() {
     return {
-      open: false
+      open: false,
+      single: false
     };
   },
   inject: ["eventBus"],
@@ -14401,7 +14412,9 @@ var _default = {
 
     this.eventBus && this.eventBus.$on("update:selected", function (name) {
       if (name !== _this.name) {
-        _this.close();
+        if (_this.single) {
+          _this.close();
+        }
       } else {
         _this.show();
       }
@@ -14412,7 +14425,6 @@ var _default = {
       if (this.open) {
         this.open = false;
       } else {
-        this.open = true;
         this.eventBus && this.eventBus.$emit("update:selected", this.name);
       }
     },
@@ -14530,7 +14542,11 @@ var _collapse = _interopRequireDefault(require("./collapse.vue"));
 
 var _collapseItem = _interopRequireDefault(require("./collapse-item.vue"));
 
+var _data;
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 _vue.default.use(_toastPlugin.default);
 
@@ -14574,13 +14590,13 @@ _vue.default.component('funk-collapse-item', _collapseItem.default);
 
 new _vue.default({
   el: '#app',
-  data: {
+  data: (_data = {
     loading1: false,
     loading2: false,
     loading3: true,
     msg: 'hi',
     selectedTab: 'women'
-  },
+  }, _defineProperty(_data, "selectedTab", 2), _defineProperty(_data, "single", false), _data),
   methods: {
     inputChange: function inputChange(_ref) {
       var target = _ref.target;
@@ -14597,6 +14613,7 @@ new _vue.default({
       });
     }
   },
+  created: function created() {},
   mounted: function mounted() {}
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./icon.vue":"src/icon.vue","./buttonGroup.vue":"src/buttonGroup.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue","./layout.vue":"src/layout.vue","./header.vue":"src/header.vue","./container.vue":"src/container.vue","./slider.vue":"src/slider.vue","./footer.vue":"src/footer.vue","./tabs.vue":"src/tabs.vue","./tabsHead.vue":"src/tabsHead.vue","./tabsItem.vue":"src/tabsItem.vue","./tabsBody.vue":"src/tabsBody.vue","./tabsPane.vue":"src/tabsPane.vue","./toast-plugin.js":"src/toast-plugin.js","./popover.vue":"src/popover.vue","./collapse.vue":"src/collapse.vue","./collapse-item.vue":"src/collapse-item.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {

@@ -16,12 +16,14 @@ export default {
       required: true
     },
     name: {
-       type: String|Number
+      type: String | Number,
+      required: true
     }
   },
   data() {
     return {
-      open: false
+      open: false,
+      single: false
     };
   },
   inject: ["eventBus"],
@@ -29,9 +31,11 @@ export default {
     this.eventBus &&
       this.eventBus.$on("update:selected", name => {
         if (name !== this.name) {
-          this.close();
-        }else {
-           this.show()
+          if (this.single) {
+            this.close();
+          }
+        } else {
+          this.show();
         }
       });
   },
@@ -40,15 +44,14 @@ export default {
       if (this.open) {
         this.open = false;
       } else {
-        this.open = true;
         this.eventBus && this.eventBus.$emit("update:selected", this.name);
       }
     },
     close() {
       this.open = false;
     },
-    show(){
-       this.open = true;
+    show() {
+      this.open = true;
     }
   }
 };
