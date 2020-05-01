@@ -11,7 +11,13 @@ export default {
     single: {
       type: Boolean,
       default: false
+    },
+    selected: {
+      type: String|Number
     }
+  },
+  mounted(){
+    this.eventBus.$emit('update:selected',this.selected)
   },
   data() {
     return {
@@ -19,11 +25,11 @@ export default {
     };
   },
   provide() {
-    if (this.single) {
+    // if (this.single) {
       return {
         eventBus: this.eventBus
       }
-    }
+    // }
   }
 };
 </script>
