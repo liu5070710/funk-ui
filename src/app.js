@@ -22,6 +22,9 @@ import TabsPane from './tabsPane.vue';
 import toastPlugin from './toast-plugin.js'
 
 import Popover from './popover.vue'
+
+import collapse from './collapse.vue'
+import collapseItem from './collapse-item.vue'
 Vue.use(toastPlugin)
 
 Vue.component('funk-button',Button)
@@ -46,6 +49,8 @@ Vue.component('funk-tabs-body',TabsBody)
 Vue.component('funk-tabs-pane',TabsPane)
 
 Vue.component('funk-popover',Popover)
+Vue.component('funk-collapse',collapse)
+Vue.component('funk-collapse-item',collapseItem)
 
 new Vue({
    el:'#app',
