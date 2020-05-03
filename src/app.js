@@ -14,7 +14,7 @@ import Slider from './slider.vue';
 import Footer from './footer.vue';
 
 import Tabs from './tabs.vue';
-import TabsHead from './tabsHead.vue';
+import TabsHead from './tabsHead.vue'
 import TabsItem from './tabsItem.vue';
 import TabsBody from './tabsBody.vue';
 import TabsPane from './tabsPane.vue';
