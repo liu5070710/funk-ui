@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel index.html --no-cache"
+    "start": "npx parcel index.html --no-cache",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -27,9 +29,14 @@
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.1.2",
+    "node-sass": "^4.14.0",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.5",
-    "vue-template-compiler": "^2.6.11"
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.4.1"
   },
-  "alias": { "vue" : "./node_modules/vue/dist/vue.common.js" }
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  }
 }

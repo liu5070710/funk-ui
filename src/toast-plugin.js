@@ -10,14 +10,14 @@ export default {
          let onClose = () => {
             currtoast = null;
          };
-         let currtoast = createToast(Vue, message, toastOpts, onClose)
+          currtoast = createToast(Vue, message, toastOpts, onClose)
 
       }
    }
 }
 
 function createToast(Vue, message, toastOpts = {}, onClose) {
-   options.message = message
+   toastOpts.message = message
    let constructor = Vue.extend(toast)
    let toastCom = new constructor({ propsData: toastOpts}).$mount()
    toastCom.$on("close", onClose);

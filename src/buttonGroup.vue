@@ -23,12 +23,12 @@ export default {
   > .funk-button {
     border-radius: 0;
     &:first-child {
-      border-bottom-left-radius: var(--border-radius);
-      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
     }
     &:last-child {
-      border-bottom-right-radius: var(--border-radius);
-      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
     }
     &:not(:first-child) {
       margin-left: -1px;

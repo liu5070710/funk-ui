@@ -42,7 +42,6 @@ export default {
 <style lang="scss" scoped>
 .tabs-pane {
   &.active {
-    background-color: rgb(49, 185, 144);
   }
 }
 </style>

@@ -71,11 +71,15 @@ new Vue({
       },
       toastTest() {
          // this.$toast() 第二个参数传关闭按钮的配置参数
-         this.$toast('这是一条提示信息', {
-            text: 'ok',
-            callback(toast) {
-               console.log('用户点击ok');
-               console.log('回传的toast实例', toast);
+         this.$toast(`你掷出:${parseInt(Math.random() * 100)}(0-100)`, {
+            autoClose: false,
+            position: "top",
+            closeButton: {
+               text: "触发回调",
+               callback: toast => {
+                  console.log("用户做一些事...");
+                  console.log('toast实例',toast); //callback时把实例交给用户
+               }
             }
          })
       }

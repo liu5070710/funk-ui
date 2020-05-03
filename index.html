@@ -10,7 +10,7 @@
          margin: 0;
          padding: 0;
          box-sizing: border-box;
-         color: rgb(91, 136, 149);
+         /* color: rgb(91, 136, 149); */
       }
 
       :root {
@@ -45,12 +45,17 @@
       }
 
       .funk-header {
-         background-color: #999;
+         background-color: #b3c0d1;
+         height: 100px;
+      }
+
+      .funk-container {
+         background-color: rgb(235, 197, 197);
          height: 100px;
       }
 
       .funk-footer {
-         background-color: #666;
+         background-color: #b3c0d1;
       }
    </style>
 
@@ -65,9 +70,9 @@
          <funk-collapse-item title='标题2' name="2">内容2内容2内容2</funk-collapse-item>
          <funk-collapse-item title='标题3' name="3">内容3内容3内容3</funk-collapse-item>
       </funk-collapse>
-      {{selectedTab}}
+
       <!-- 测试popover -->
-      <!-- <funk-popover>
+      <!-- <funk-popover position='top' trigger="hover">
          <template slot="content">
             <div>这是内容</div>
          </template>
@@ -96,21 +101,32 @@
 
 
       <!-- 测试toast -->
-      <!-- <button @click="toastTest">点我</button> -->
+      <!-- <funk-button  @click="toastTest">点我</funk-button>
+      <button @click="$toast('点击弹出提示1',{position:'top'})">点我</button>
+      <button @click="$toast('点击弹出提示2',{position:'middle'})">点我</button>
+      <button @click="$toast('点击弹出提示3',{position:'bottom'})">点我</button>
+      
+      <button @click="$toast('这是一条提示信息1', {
+         text: 'ok',
+         callback(toast) {
+            console.log('用户点击ok');
+            console.log('回传的toast实例', toast);
+         }
+      })">点我</button> -->
 
-      <!-- <funk-layout style="height: 100vh;">
+      <!-- <funk-layout >
          <funk-header class="funk-header">header</funk-header>
          <funk-container class="funk-container">container</funk-container>
          <funk-footer class="funk-footer">footer</funk-footer>
       </funk-layout> -->
 
       <!-- <funk-layout >
-         <funk-header class="demo">header</funk-header>
+         <funk-header class="funk-header">header</funk-header>
          <funk-layout >
             <funk-slider class="demo">slider</funk-slider>
-            <funk-container class="demo">container</funk-container>
+            <funk-container class="funk-container">container</funk-container>
          </funk-layout>
-         <funk-footer class="demo">footer</funk-footer>
+         <funk-footer class="funk-footer">footer</funk-footer>
       </funk-layout> -->
 
       <!-- <funk-layout style="height: 100vh;">
@@ -123,38 +139,43 @@
       </funk-layout> -->
 
 
-
+      <!-- 测试响应式布局 -->
       <!-- <funk-row >
-         <funk-col span="2" :phone="{span:2}" :ipad="{span:6}" :narrow-pc="{span:12}" :pc="{span:16}" :wide-pc="{span:22}">1
-         </funk-col>
-         <funk-col span="22" :phone="{span:22}" :ipad="{span:18}" :narrow-pc="{span:12}" :pc="{span:8}" :wide-pc="{span:2}">2
-         </funk-col>
-      </funk-row>
-      <funk-row>
-         <funk-col>3</funk-col>
-         <funk-col>4</funk-col>
-         <funk-col>5</funk-col>
-      </funk-row>
-      <funk-row>
-         <funk-col span="1">10</funk-col>
-         <funk-col span="10" offset='2'>14</funk-col>
-         <funk-col span="8" offset='3'>14</funk-col>
-      </funk-row> -->
+            <funk-col span="2" :phone="{span:2}" :ipad="{span:6}" :narrow-pc="{span:12}" :pc="{span:16}" :wide-pc="{span:22}">1
+            </funk-col>
+            <funk-col span="22" :phone="{span:22}" :ipad="{span:18}" :narrow-pc="{span:12}" :pc="{span:8}" :wide-pc="{span:2}">2
+            </funk-col>
+         </funk-row> -->
+      <!-- 测试gutter -->
+      <!-- <funk-row :gutter="50">
+            <funk-col span="6">3</funk-col>
+            <funk-col span="6">4</funk-col>
+            <funk-col span="6">5</funk-col>
+            <funk-col span="6">5</funk-col>
+         </funk-row> -->
+      <!-- 测试offset -->
+      <!-- <funk-row>
+            <funk-col span="1">1</funk-col>
+            <funk-col span="10" offset='2'>10</funk-col>
+            <funk-col span="8" offset='3'>8</funk-col>
+         </funk-row> -->
 
+
+      <!-- 测试input -->
 
       <!-- <div class="box">
          <funk-input value='张三' v-model="msg"></funk-input>
-         {{msg}}
          <funk-input value='李四' disabled></funk-input>
          <funk-input value='王五' readOnly></funk-input>
       </div>
+
       <div class="box">
-         <funk-input @change='inputChange' error="密码不得少于7个字符"></funk-input>
+         <funk-input value='22' @change='inputChange' error="名字不得少于2字"></funk-input>
       </div> -->
 
 
       <!-- <div class="box">
-         <funk-button icon="#i-settings" icon-position="left" @click="loading1=!loading1" :loading="loading1">
+         <funk-button icon="#i-settings"  @click="loading1=!loading1" :loading="loading1">
             点击
          </funk-button>
 
@@ -166,8 +187,11 @@
             点我
          </funk-button>
 
+         <funk-button disabled>禁用</funk-button>
+
          <funk-button-group>
             <funk-button icon="#i-left">上一页</funk-button>
+            <funk-button></funk-button>
             <funk-button icon="#i-right" icon-position="right">下一页</funk-button>
          </funk-button-group>
       </div> -->

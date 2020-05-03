@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-function validator(value) {
+let validator = (value)=>{
   let flag = true;
   let keys = Object.keys(value);
   keys.forEach(key => {
@@ -17,7 +17,6 @@ export default {
   props: {
     span: { type: [Number, String] },
     offset: { type: [Number, String] },
-    gutter: { type: [Number, String] },
     phone: { type: Object, validator },
     ipad: { type: Object, validator },
     narrowPc: { type: Object, validator },
@@ -28,7 +27,6 @@ export default {
     colClass() {
       let { span, offset, phone, ipad, narrowPc, pc, widePc } = this;
       // let phoneClass = [];
-      console.log(narrowPc);
       
       return [
         span && `col-${span}`,
@@ -49,15 +47,21 @@ export default {
     }
   },
   mounted() {
-  }
+  },
+  data() {
+    return {
+      gutter: 0
+    };
+  },
 };
 </script>
 <style lang="scss">
 .col {
-  height: 100px;
-  background: #2c3e50;
+  min-height: 36px;
+  background-color: rgb(211, 220, 230);
+  background-clip: content-box;
+  vertical-align: middle;
   width: 50%;
-  border: 1px solid #e74c3c;
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {

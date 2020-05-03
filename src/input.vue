@@ -44,14 +44,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// --button-height: 32px;
-// --font-size: 14px;
-// --button-bg: #fff;
-// --button-active-bg: #eee;
-// --border-radius: 4px;
-// --color: #333;
-// --border-color: #999;
-// --border-color-hover: #666;
 $border-color: #999;
 $height: 32px;
 $border-color-hover: #666;
@@ -60,7 +52,7 @@ $font-size: 12px;
 $box-shadow-color: rgba(0, 0, 0, 0.5);
 $red: #f1453d;
 .wrapper {
-  display: inline-flex;
+  // display: inline-flex;
   justify-content: center;
   align-items: center;
   font-size: $font-size;

@@ -58,8 +58,9 @@ export default {
   flex-shrink: 0;
   cursor: pointer;
   &.active {
-    font-weight: 600;
-    border-bottom: 2px solid rgb(91, 136, 149);
+    font-weight: 500;
+    color: #409eff;
+    border-bottom: 2px solid #409eff;
     transition: all 0.1s;
   }
   &.disabled {
